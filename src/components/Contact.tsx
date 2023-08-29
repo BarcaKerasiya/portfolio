@@ -24,18 +24,21 @@ const Contact = () => {
           type="text"
           placeholder="Name"
           name="name"
+          required
         />
         <input
           className="my-4 p-2 rounded-md focus:outline-0 text-[#77B255]"
           type="email"
           placeholder="Email"
           name="email"
+          required
         />
         <textarea
           className="p-2 rounded-md focus:outline-0 text-[#77B255]"
           name="message"
           rows={6}
           placeholder="Message"
+          required
         ></textarea>
         <button className="text-white border-2 border-[#77B255] hover:bg-[#77B255] hover:border-[#77B255] px-4 py-3 my-8 mx-auto flex items-center rounded-md">
           Let's Collaborate

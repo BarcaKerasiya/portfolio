@@ -13,7 +13,10 @@ export const Navbar = () => {
     setToggle(!toggle);
   };
   return (
-    <div className="flex justify-between items-center fixed h-[80px] bg-[#0a192f] w-full px-4">
+    <div
+      id="navbar"
+      className="flex justify-between items-center fixed h-[80px] bg-[#0a192f] w-full px-4"
+    >
       <div>
         <img src={Logo} className="h-11" />
       </div>

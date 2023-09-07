@@ -57,6 +57,17 @@ export const Navbar = () => {
         <li>
           <Link
             className="hover:text-[#77B255] duration-300"
+            to="blogs"
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Blogs
+          </Link>
+        </li>
+        {/* <li>
+          <Link
+            className="hover:text-[#77B255] duration-300"
             to="work"
             smooth={true}
             offset={50}
@@ -64,7 +75,7 @@ export const Navbar = () => {
           >
             Work
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             className="hover:text-[#77B255] duration-300"
@@ -134,6 +145,19 @@ export const Navbar = () => {
           {" "}
           <Link
             onClick={toggleClick}
+            to="blogs"
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="hover:text-[#77B255] duration-300"
+          >
+            Blogs
+          </Link>
+        </li>
+        {/* <li className="py-6 text-2xl">
+          {" "}
+          <Link
+            onClick={toggleClick}
             to="work"
             smooth={true}
             offset={50}
@@ -142,7 +166,7 @@ export const Navbar = () => {
           >
             Work
           </Link>
-        </li>
+        </li> */}
         <li className="py-6 text-2xl">
           {" "}
           <Link

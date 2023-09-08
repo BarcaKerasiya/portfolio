@@ -1,4 +1,4 @@
-import { formUrl, mail } from "../constants/constants";
+import { mail } from "../constants/constants";
 
 const Contact = () => {
   return (
@@ -8,7 +8,7 @@ const Contact = () => {
     >
       <form
         method="POST"
-        action={formUrl}
+        action={process.env.REACT_APP_GETFORM_URL}
         className="flex flex-col max-w-[600px] w-full pt-[10rem]"
       >
         <div className="pb-8">

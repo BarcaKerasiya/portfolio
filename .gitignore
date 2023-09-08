@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-/src/constants/constants.tsx
+# /src/constants/constants.tsx
 
 .vercel
+.env

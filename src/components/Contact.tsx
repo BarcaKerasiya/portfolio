@@ -8,7 +8,7 @@ const Contact = () => {
     >
       <form
         method="POST"
-        action={process.env.REACT_APP_GETFORM_URL}
+        action={import.meta.env.VITE_REACT_APP_GETFORM_URL}
         className="flex flex-col max-w-[600px] w-full pt-[10rem]"
       >
         <div className="pb-8">

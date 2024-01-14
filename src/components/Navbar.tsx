@@ -4,11 +4,12 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "../assets/logo1.png";
 import { useState } from "react";
 // import { linkedin, github, mail } from "../constants/constants";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 // import resume from "../assets/pdfs/vishnu_kerasiya.pdf";
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
+
   const toggleClick = () => {
     setToggle(!toggle);
   };
@@ -57,7 +58,7 @@ export const Navbar = () => {
         <li>
           <Link
             className="hover:text-[#77B255] duration-300"
-            to="blogs"
+            to="/blogs"
             smooth={true}
             offset={50}
             duration={500}

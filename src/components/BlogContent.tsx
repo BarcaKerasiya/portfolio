@@ -1,5 +1,3 @@
-import React from "react";
-
 const BlogContentSection = () => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 md:w-2/3 lg:w-1/2 mx-auto">

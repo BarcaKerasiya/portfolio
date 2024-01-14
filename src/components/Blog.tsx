@@ -166,12 +166,12 @@ const Blog = () => {
                 </time>
                 <a
                   href={post.category.href}
-                  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                  className="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                 >
                   {post.category.title}
                 </a>
               </div>
-              <div className="group relative">
+              <div className="group">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <a href={post.href} className="text-white">
                     <span className="absolute inset-0" />
@@ -182,7 +182,7 @@ const Blog = () => {
                   {post.description}
                 </p>
               </div>
-              <div className="relative mt-8 flex items-center gap-x-4">
+              <div className="mt-8 flex items-center gap-x-4">
                 <img
                   src={post.author.imageUrl}
                   alt=""

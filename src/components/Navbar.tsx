@@ -1,11 +1,11 @@
-import { FaBars, FaTimes, FaLinkedin, FaGithub } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { FaBars, FaTimes } from "react-icons/fa";
+// import { HiOutlineMail } from "react-icons/hi";
+// import { BsFillPersonLinesFill } from "react-icons/bs";
 import Logo from "../assets/logo1.png";
 import { useState } from "react";
-import { linkedin, github, mail } from "../constants/constants";
+// import { linkedin, github, mail } from "../constants/constants";
 import { Link } from "react-scroll";
-import resume from "../assets/pdfs/vishnu_kerasiya.pdf";
+// import resume from "../assets/pdfs/vishnu_kerasiya.pdf";
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -24,7 +24,7 @@ export const Navbar = () => {
         <li>
           <Link
             className="hover:text-[#77B255] duration-300"
-            to="home"
+            to="/home"
             smooth={true}
             offset={50}
             duration={500}
@@ -183,7 +183,7 @@ export const Navbar = () => {
       </ul>
 
       {/* social media icons */}
-      <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+      {/* <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
         <ul>
           <li className="flex justify-center items-center w-[125px] h-[40px] ml-[-85px] hover:ml-[0px] duration-300 bg-blue-600 px-0 rounded-r-lg">
             <a
@@ -225,7 +225,7 @@ export const Navbar = () => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

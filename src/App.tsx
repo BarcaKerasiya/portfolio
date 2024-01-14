@@ -1,25 +1,36 @@
-import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+// import Hero from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+// import BlogContentSection from "./components/BlogContent";
+// import Work from "./components/Work";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  // RouterProvider,
+  // Route,
+  // Link,
+} from "react-router-dom";
+import Home from "./components/Hero";
 import Skills from "./components/Skills";
 import Blog from "./components/Blog";
-// import Work from "./components/Work";
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Blog />
-      {/* <Work /> */}
-      <Contact />
-      <Footer />
-    </>
-  );
-}
-
-export default App;
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <Navbar />
+        <Home />
+        {/* <Skills />
+        <Blog />
+        <Contact />
+        <Footer /> */}
+      </>
+    ),
+  },
+  {
+    path: "about",
+    element: <div>About</div>,
+  },
+]);

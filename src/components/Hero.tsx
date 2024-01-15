@@ -1,6 +1,6 @@
-import { HiArrowNarrowRight } from "react-icons/hi";
+// import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-scroll";
-import ProfilePhoto from "../assets/profile-photo-trans.png";
+// import ProfilePhoto from "../assets/profile-photo-trans.png";
 
 const Home = () => {
   return (
@@ -19,12 +19,12 @@ const Home = () => {
         {/* <img className="w-250px h-250px" src={ProfilePhoto} /> */}
         <div className="mt-5">
           <Link to="work" smooth={true} offset={50} duration={500}>
-            <button className="flex group justify-between items-center border border-[#77B255] hover:bg-[#77B255] px-4 py-2 rounded-md ">
+            {/* <button className="flex group justify-between items-center border border-[#77B255] hover:bg-[#77B255] px-4 py-2 rounded-md ">
               View Work
               <span className="group-hover:rotate-90 duration-300">
                 <HiArrowNarrowRight className="ml-2" />
               </span>
-            </button>
+            </button> */}
           </Link>
         </div>
       </div>

@@ -25,10 +25,7 @@ export const Navbar = () => {
         <li>
           <Link
             className="hover:text-[#77B255] duration-300"
-            to="/home"
-            smooth={true}
-            offset={50}
-            duration={500}
+            to="home"
           >
             Home
           </Link>
@@ -37,9 +34,7 @@ export const Navbar = () => {
           <Link
             className="hover:text-[#77B255] duration-300"
             to="about"
-            smooth={true}
-            offset={50}
-            duration={500}
+           
           >
             About
           </Link>
@@ -48,9 +43,7 @@ export const Navbar = () => {
           <Link
             className="hover:text-[#77B255] duration-300"
             to="skills"
-            smooth={true}
-            offset={50}
-            duration={500}
+         
           >
             Skills
           </Link>
@@ -59,9 +52,7 @@ export const Navbar = () => {
           <Link
             className="hover:text-[#77B255] duration-300"
             to="/blogs"
-            smooth={true}
-            offset={50}
-            duration={500}
+            
           >
             Blogs
           </Link>
@@ -81,9 +72,7 @@ export const Navbar = () => {
           <Link
             className="hover:text-[#77B255] duration-300"
             to="contact"
-            smooth={true}
-            offset={50}
-            duration={500}
+            
           >
             Contact
           </Link>
@@ -109,9 +98,7 @@ export const Navbar = () => {
           <Link
             onClick={toggleClick}
             to="home"
-            smooth={true}
-            offset={50}
-            duration={500}
+          
             className="hover:text-[#77B255] duration-300"
           >
             Home
@@ -122,9 +109,7 @@ export const Navbar = () => {
           <Link
             onClick={toggleClick}
             to="about"
-            smooth={true}
-            offset={50}
-            duration={500}
+           
             className="hover:text-[#77B255] duration-300"
           >
             About
@@ -134,9 +119,7 @@ export const Navbar = () => {
           <Link
             onClick={toggleClick}
             to="skills"
-            smooth={true}
-            offset={50}
-            duration={500}
+         
             className="hover:text-[#77B255] duration-300"
           >
             Skills
@@ -147,9 +130,7 @@ export const Navbar = () => {
           <Link
             onClick={toggleClick}
             to="blogs"
-            smooth={true}
-            offset={50}
-            duration={500}
+        
             className="hover:text-[#77B255] duration-300"
           >
             Blogs
@@ -173,9 +154,7 @@ export const Navbar = () => {
           <Link
             onClick={toggleClick}
             to="contact"
-            smooth={true}
-            offset={50}
-            duration={500}
+            
             className="hover:text-[#77B255] duration-300"
           >
             Contact

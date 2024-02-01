@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "../assets/logo1.png";
 import { useState } from "react";
 // import { linkedin, github, mail } from "../constants/constants";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import resume from "../assets/pdfs/vishnu_kerasiya.pdf";
 
 export const Navbar = () => {
@@ -15,50 +15,37 @@ export const Navbar = () => {
   };
   return (
     <div
-      id="navbar"
+      // id="navbar"
       className="flex justify-between items-center fixed h-[80px] bg-[#0a192f] w-full px-4"
     >
       <div>
-        <img src={Logo} className="h-11" />
+        <NavLink to="/">
+          <img src={Logo} className="h-11" />
+        </NavLink>
       </div>
       <ul className="hidden md:flex">
         <li>
-          <Link
-            className="hover:text-[#77B255] duration-300"
-            to="home"
-          >
+          <NavLink className="hover:text-[#77B255] duration-300" to="/">
             Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="hover:text-[#77B255] duration-300"
-            to="about"
-           
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="hover:text-[#77B255] duration-300"
-            to="skills"
-         
-          >
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="hover:text-[#77B255] duration-300"
-            to="/blogs"
-            
-          >
-            Blogs
-          </Link>
+          </NavLink>
         </li>
         {/* <li>
-          <Link
+          <NavLink className="hover:text-[#77B255] duration-300" to="about">
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="hover:text-[#77B255] duration-300" to="skills">
+            Skills
+          </NavLink>
+        </li> */}
+        <li>
+          <NavLink className="hover:text-[#77B255] duration-300" to="/blogs">
+            Blogs
+          </NavLink>
+        </li>
+        {/* <li>
+          <NavLink
             className="hover:text-[#77B255] duration-300"
             to="work"
             smooth={true}
@@ -66,16 +53,12 @@ export const Navbar = () => {
             duration={500}
           >
             Work
-          </Link>
+          </NavLink>
         </li> */}
         <li>
-          <Link
-            className="hover:text-[#77B255] duration-300"
-            to="contact"
-            
-          >
+          <NavLink className="hover:text-[#77B255] duration-300" to="contact">
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <div onClick={toggleClick} className="md:hidden  z-10">
@@ -95,50 +78,46 @@ export const Navbar = () => {
         }
       >
         <li className="py-6 text-2xl">
-          <Link
+          <NavLink
             onClick={toggleClick}
-            to="home"
-          
+            to="/"
             className="hover:text-[#77B255] duration-300"
           >
             Home
-          </Link>
-        </li>
-        <li className="py-6 text-2xl">
-          {" "}
-          <Link
-            onClick={toggleClick}
-            to="about"
-           
-            className="hover:text-[#77B255] duration-300"
-          >
-            About
-          </Link>
-        </li>
-        <li className="py-6 text-2xl">
-          <Link
-            onClick={toggleClick}
-            to="skills"
-         
-            className="hover:text-[#77B255] duration-300"
-          >
-            Skills
-          </Link>
-        </li>
-        <li className="py-6 text-2xl">
-          {" "}
-          <Link
-            onClick={toggleClick}
-            to="blogs"
-        
-            className="hover:text-[#77B255] duration-300"
-          >
-            Blogs
-          </Link>
+          </NavLink>
         </li>
         {/* <li className="py-6 text-2xl">
           {" "}
-          <Link
+          <NavLink
+            onClick={toggleClick}
+            to="about"
+            className="hover:text-[#77B255] duration-300"
+          >
+            About
+          </NavLink>
+        </li>
+        <li className="py-6 text-2xl">
+          <NavLink
+            onClick={toggleClick}
+            to="skills"
+            className="hover:text-[#77B255] duration-300"
+          >
+            Skills
+          </NavLink>
+        </li> */}
+        <li className="py-6 text-2xl">
+          {" "}
+          <NavLink
+            onClick={toggleClick}
+            to="blogs"
+            className="hover:text-[#77B255] duration-300"
+          >
+            Blogs
+          </NavLink>
+        </li>
+        {/* <li className="py-6 text-2xl">
+          {" "}
+          <NavLink
             onClick={toggleClick}
             to="work"
             smooth={true}
@@ -147,18 +126,17 @@ export const Navbar = () => {
             className="hover:text-[#77B255] duration-300"
           >
             Work
-          </Link>
+          </NavLink>
         </li> */}
         <li className="py-6 text-2xl">
           {" "}
-          <Link
+          <NavLink
             onClick={toggleClick}
             to="contact"
-            
             className="hover:text-[#77B255] duration-300"
           >
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
 

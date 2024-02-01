@@ -2,14 +2,14 @@
 import { Link } from "react-scroll";
 // import ProfilePhoto from "../assets/profile-photo-trans.png";
 
-const Home = () => {
+const Hero = () => {
   return (
-    <div id="home" className="w-full h-screen bg-[#0a192f]">
+    <div className="w-full h-screen bg-[#0a192f]">
       {/* container */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
         <p className="text-[#77B255] text-xl sm:text-xl">👋 Hi there!</p>
         <h1 className="text-4xl sm:text-4xl font-bold">I'm Vishnu Kerasiya,</h1>
-        <h2 className="text-3xl sm:text-3xl text-gray-600 w-[80%]">
+        <h2 className="text-3xl sm:text-2xl text-gray-600 w-[80%]">
           a full-stack developer who loves coding and cares about the
           environment and healthy eating. Join me on my website, where I share
           my coding adventures and tips, along with some crunchy stories about
@@ -32,4 +32,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

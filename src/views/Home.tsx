@@ -1,13 +1,13 @@
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Blog from "../components/Blog";
+// import About from "../components/About";
+// import Skills from "../components/Skills";
+// import Blog from "../components/Blog/Blog";
 
 const Home = () => {
   return (
     <>
-      <About />
-      <Skills />
-      <Blog />
+      {/* <About /> */}
+      {/* <Skills /> */}
+      {/* <Blog /> */}
       {/* <Work /> */}
     </>
   );

@@ -1,4 +1,4 @@
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 // import Footer from "./components/Footer";
 // import Hero from "./components/Hero";
 // import { Navbar } from "./components/Navbar";
@@ -17,6 +17,7 @@ import Blog from "./components/Blog/Blog";
 // import ErrorPage from "./error-page";
 import Layout from "./Layout";
 import Hero from "./components/Hero";
+import Tech from "./components/Tech";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,14 @@ export const router = createBrowserRouter([
       {
         path: "blog/:id",
         element: <BlogContentSection />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "tech",
+        element: <Tech />,
       },
     ],
   },

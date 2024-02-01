@@ -56,7 +56,12 @@ export const Navbar = () => {
           </NavLink>
         </li> */}
         <li>
-          <NavLink className="hover:text-[#77B255] duration-300" to="contact">
+          <NavLink className="hover:text-[#77B255] duration-300" to="/tech">
+            Tech
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="hover:text-[#77B255] duration-300" to="/contact">
             Contact
           </NavLink>
         </li>
@@ -132,7 +137,17 @@ export const Navbar = () => {
           {" "}
           <NavLink
             onClick={toggleClick}
-            to="contact"
+            to="/tech"
+            className="hover:text-[#77B255] duration-300"
+          >
+            Tech
+          </NavLink>
+        </li>
+        <li className="py-6 text-2xl">
+          {" "}
+          <NavLink
+            onClick={toggleClick}
+            to="/contact"
             className="hover:text-[#77B255] duration-300"
           >
             Contact

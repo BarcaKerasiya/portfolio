@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../api/axiosInstance";
+import parse from "html-react-parser";
 
 interface postInterface {
   _id: number;
@@ -28,7 +29,7 @@ interface tagInterface {
 const Blog = () => {
   const [blogs, setBlogs] = useState<postInterface[]>([]);
   const [tags, setTags] = useState<tagInterface[]>([]);
-
+  // console.log("blogs", blogs);
   useEffect(() => {
     const fetchTagsData = async () => {
       try {
@@ -88,7 +89,7 @@ const Blog = () => {
         {/* container for blogs */}
         <div className="grid gap-8 lg:grid-cols-2 p-10">
           {blogs.map((post, index) => {
-            console.log("post", post);
+            // console.log("post", post);
             return (
               <article
                 key={post._id}
@@ -99,20 +100,23 @@ const Blog = () => {
                     <time dateTime={post.datetime} className="text-[#D1D5DB]">
                       {post.date}
                     </time>
-                    <span
-                      // to={post.category.href}
-                      className="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >
-                      {/* {post.category.title} */}
-                      {index + 1}
-                    </span>
+                    {post.tagIds.map((tag) => {
+                      return (
+                        <span
+                          // to={post.category.href}
+                          className="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                        >
+                          {tag?.tagName}
+                        </span>
+                      );
+                    })}
                   </div>
                   <div className="group">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                       <span className="text-white">{post.title}</span>
                     </h3>
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-[#D1D5DB]">
-                      {post.content}
+                      {parse(post?.content)}
                     </p>
                   </div>
                   {/* <div className="mt-8 flex items-center gap-x-4">

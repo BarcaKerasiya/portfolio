@@ -17,7 +17,9 @@ interface postInterface {
     href: string;
     imageUrl: string;
   };
+  tagIds: tagInterface[]; // Add this property
 }
+
 interface tagInterface {
   id: number;
   tagName: string;
@@ -88,7 +90,7 @@ const Blog = () => {
         </div>
         {/* container for blogs */}
         <div className="grid gap-8 lg:grid-cols-2 p-10">
-          {blogs.map((post, index) => {
+          {blogs.map((post) => {
             // console.log("post", post);
             return (
               <article

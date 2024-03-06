@@ -17,10 +17,21 @@ interface postInterface {
     href: string;
     imageUrl: string;
   };
+  authorIds: Author[];
+  createdAt: string;
+}
+
+interface Author {
+  id: number;
+  name: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  jobTitle: string;
 }
 const BlogContentSection = () => {
   let { id } = useParams();
-  const [blog, setBlog] = useState<postInterface[]>([]);
+  const [blog, setBlog] = useState<postInterface | null>(null);
   console.log("blog", blog);
 
   useEffect(() => {
@@ -37,11 +48,16 @@ const BlogContentSection = () => {
   }, []);
   console.log("id", id);
 
-  const timeConvert = (createdAt) => {
+  const timeConvert = (createdAt: string) => {
     // const createdAt = "2024-02-29T12:04:57.591Z";
     const date = new Date(createdAt);
 
-    const options = { month: "short", day: "numeric", year: "numeric" };
+    // const options = { month: "short", day: "numeric", year: "numeric" };
+    const options: Intl.DateTimeFormatOptions = {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    };
     const formattedDate = date.toLocaleDateString("en-US", options);
     return formattedDate;
     console.log(formattedDate); // Output: "Feb. 29, 2024"
@@ -89,17 +105,17 @@ const BlogContentSection = () => {
 
                     <p className="text-base text-gray-500 dark:text-gray-400">
                       <time title="February 8th, 2022">
-                        {timeConvert(blog?.createdAt)}
+                        {blog && timeConvert(blog?.createdAt)}
                       </time>
                     </p>
                   </div>
                 </div>
               </address>
               <h1 className="mb-4 text-3xl font-extrabold leading-tight text-white lg:mb-6 lg:text-4xl dark:text-white">
-                {blog.title}
+                {blog && blog.title}
               </h1>
             </header>
-            <p>{parse(`${blog.content}`)}</p>
+            <p>{parse(`${blog && blog.content}`)}</p>
           </article>
         </div>
       </main>

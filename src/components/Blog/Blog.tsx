@@ -31,7 +31,6 @@ interface tagInterface {
 const Blog = () => {
   const [blogs, setBlogs] = useState<postInterface[]>([]);
   const [tags, setTags] = useState<tagInterface[]>([]);
-  // console.log("blogs", blogs);
   useEffect(() => {
     const fetchTagsData = async () => {
       try {
@@ -56,9 +55,6 @@ const Blog = () => {
 
     fetchBlogsData();
   }, []);
-  // projects file
-  //   const project = data;
-  //setProject(data);
 
   return (
     <div id="work" className="w-full md:h-fit text-gray-300 bg-[#0a192f]">
@@ -89,13 +85,12 @@ const Blog = () => {
           })}
         </div>
         {/* container for blogs */}
-        <div className="grid gap-8 lg:grid-cols-2 p-10">
+        <div className="grid gap-8 lg:grid-cols-2 pt-8">
           {blogs.map((post) => {
-            // console.log("post", post);
             return (
               <article
                 key={post._id}
-                className={` ${post._id} flex max-w-xl flex-col items-start justify-between bg-[#77B255] p-[1rem] rounded-lg`}
+                className={` flex flex-col items-start justify-between bg-[#77B255] p-[1rem] rounded-lg`}
               >
                 <Link to={`/blog/${post._id}`}>
                   <div className="flex items-center gap-x-4 text-xs">
@@ -118,22 +113,9 @@ const Blog = () => {
                       <span className="text-white">{post.title}</span>
                     </h3>
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-[#D1D5DB]">
-                      {parse(post?.content)}
+                      {/* {parse(post?.content)} */}
                     </p>
                   </div>
-                  {/* <div className="mt-8 flex items-center gap-x-4">
-                    <img
-                      src={post.author.imageUrl}
-                      alt=""
-                      className="h-10 w-10 rounded-full bg-gray-50"
-                    />
-                    <div className="text-sm leading-6">
-                      <p className="font-semibold text-gray-900">
-                        <span className="text-white">{post.author.name}</span>
-                      </p>
-                      <p className="text-[#D1D5DB]">{post.author.role}</p>
-                    </div>
-                  </div> */}
                 </Link>
               </article>
             );

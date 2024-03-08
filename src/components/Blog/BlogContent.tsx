@@ -22,7 +22,7 @@ interface postInterface {
 }
 
 interface Author {
-  id: number;
+  _id: number;
   name: string;
   status: string;
   createdAt: string;
@@ -32,7 +32,6 @@ interface Author {
 const BlogContentSection = () => {
   let { id } = useParams();
   const [blog, setBlog] = useState<postInterface | null>(null);
-  console.log("blog", blog);
 
   useEffect(() => {
     const fetchTagsData = async () => {
@@ -46,7 +45,6 @@ const BlogContentSection = () => {
 
     fetchTagsData();
   }, []);
-  console.log("id", id);
 
   const timeConvert = (createdAt: string) => {
     // const createdAt = "2024-02-29T12:04:57.591Z";
@@ -60,7 +58,6 @@ const BlogContentSection = () => {
     };
     const formattedDate = date.toLocaleDateString("en-US", options);
     return formattedDate;
-    console.log(formattedDate); // Output: "Feb. 29, 2024"
   };
   return (
     <>
@@ -78,9 +75,9 @@ const BlogContentSection = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       ></path>
                     </svg>
                   </div>
@@ -88,7 +85,7 @@ const BlogContentSection = () => {
                   <div>
                     {blog?.authorIds?.map((author) => {
                       return (
-                        <>
+                        <section key={author._id}>
                           <a
                             href="#"
                             rel="author"
@@ -99,7 +96,7 @@ const BlogContentSection = () => {
                           <p className="text-base text-gray-500 dark:text-gray-400">
                             {author?.jobTitle}
                           </p>
-                        </>
+                        </section>
                       );
                     })}
 
@@ -115,7 +112,7 @@ const BlogContentSection = () => {
                 {blog && blog.title}
               </h1>
             </header>
-            <p>{parse(`${blog && blog.content}`)}</p>
+            <div>{parse(`${blog && blog.content}`)}</div>
           </article>
         </div>
       </main>

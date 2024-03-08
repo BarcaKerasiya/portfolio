@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../api/axiosInstance";
+import { useDebounce } from "use-debounce";
 
 interface postInterface {
   _id: number;
@@ -31,6 +32,8 @@ const Blog = () => {
   const [blogs, setBlogs] = useState<postInterface[]>([]);
   const [tags, setTags] = useState<tagInterface[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [value] = useDebounce(searchQuery, 500);
+
   useEffect(() => {
     const fetchTagsData = async () => {
       try {
@@ -46,9 +49,9 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogsData = async () => {
       try {
-        if (searchQuery.length > 0) {
+        if (value.length > 0) {
           let response = await axiosInstance.get(
-            `/blogs?search_query=${searchQuery}`
+            `/blogs?search_query=${value}`
           ); // Relative URL, it appends to the baseURL
           setBlogs(response.data);
         } else {
@@ -61,7 +64,7 @@ const Blog = () => {
     };
 
     fetchBlogsData();
-  }, [searchQuery]);
+  }, [value]);
 
   return (
     <div id="work" className="w-full md:h-fit text-gray-300 bg-[#0a192f]">
@@ -78,6 +81,7 @@ const Blog = () => {
               placeholder="Search post by title..."
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
               value={searchQuery}
+              defaultValue={"hello"}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>

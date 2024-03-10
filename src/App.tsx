@@ -18,6 +18,7 @@ import Blog from "./components/Blog/Blog";
 import Layout from "./Layout";
 import Hero from "./components/Hero";
 import Tech from "./components/Tech";
+import ErrorPage from "./error-page";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: "tech",
         element: <Tech />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },

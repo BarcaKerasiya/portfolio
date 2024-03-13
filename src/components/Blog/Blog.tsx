@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../api/axiosInstance";
 import { useDebounce } from "use-debounce";
+import { timeConvert } from "../../utils/timeConversion";
 
 interface postInterface {
   _id: number;
@@ -18,6 +19,8 @@ interface postInterface {
     imageUrl: string;
   };
   tagIds: tagInterface[]; // Add this property
+  createdAt: string;
+  updatedAt: string;
 }
 
 interface tagInterface {
@@ -106,24 +109,26 @@ const Blog = () => {
                   key={post._id}
                   className={` flex flex-col items-start justify-between bg-[#77B255] p-[1rem] rounded-lg`}
                 >
-                  <Link to={`/blog/${post._id}`}>
-                    <div className="flex items-center gap-x-4 text-xs">
-                      <time dateTime={post.datetime} className="text-[#D1D5DB]">
-                        {post.date}
-                      </time>
+                  <div className="flex items-center justify-between gap-x-4 text-xs w-[100%]">
+                    <span>
                       {post.tagIds.map((tag) => {
                         return (
                           <span
                             // to={post.category.href}
-                            className="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                            className="rounded-full bg-gray-50 px-3 mr-1 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                           >
                             {tag?.tagName}
                           </span>
                         );
                       })}
-                    </div>
+                    </span>
+                    <time dateTime={post.datetime} className="text-[#D1D5DB]">
+                      {timeConvert(post.createdAt)}
+                    </time>
+                  </div>
+                  <Link to={`/blog/${post._id}`}>
                     <div className="group">
-                      <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <h3 className="mt-3 text-lg font-semibold leading-6  group-hover:text-gray-600 text-white hover:underline">
                         <span className="text-white">{post.title}</span>
                       </h3>
                       <p className="mt-5 line-clamp-3 text-sm leading-6 text-[#D1D5DB]">

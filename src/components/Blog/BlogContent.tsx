@@ -31,7 +31,7 @@ interface Author {
   jobTitle: string;
 }
 const BlogContentSection = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   const [blog, setBlog] = useState<postInterface | null>(null);
 
   useEffect(() => {

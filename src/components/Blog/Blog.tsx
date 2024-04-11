@@ -113,7 +113,7 @@ const Blog = () => {
               setTagQuery("clearAll");
               setSearchQuery("");
             }}
-            className="p-[0.5rem] bg-[#77B255]  rounded-lg m-[0.5rem] cursor-pointer"
+            className="text-red-600 font-bold p-[0.5rem] bg-[#77B255]  rounded-lg m-[0.5rem] cursor-pointer"
           >
             Clear All
           </span>

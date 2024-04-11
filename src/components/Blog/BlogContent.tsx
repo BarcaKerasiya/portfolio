@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { axiosInstance } from "../../api/axiosInstance";
 import parse from "html-react-parser";
 import { timeConvert } from "../../utils/timeConversion";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 interface postInterface {
   _id: number;
@@ -56,6 +57,13 @@ const BlogContentSection = () => {
               <header className="mb-4 lg:mb-6 not-format">
                 <address className="flex items-center mb-6 not-italic">
                   <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                    <NavLink
+                      className="hover:text-[#77B255] duration-300"
+                      to="/blogs"
+                    >
+                      <FaArrowLeftLong size={24} className="text-white mr-5" />
+                    </NavLink>
+
                     <div className="-z-50 relative w-10 h-10 mr-4  overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
                       <svg
                         className="absolute w-12 h-12 text-gray-400 -left-1"

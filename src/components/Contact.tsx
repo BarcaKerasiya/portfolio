@@ -13,6 +13,7 @@ const Contact = () => {
     try {
       const response = await axiosInstance.post("/contact-me", formData); // Adjust the URL according to your API endpoint
       console.log("Post request response:", response.data);
+      setFormData({ ...formData, name: "", email: "", message: "" });
     } catch (error) {
       console.error("Error posting data:", error);
     }

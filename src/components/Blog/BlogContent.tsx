@@ -50,7 +50,7 @@ const BlogContentSection = () => {
 
   return (
     <>
-      <main className="pt-20 pb-16 lg:pt-32 lg:pb-24  dark:bg-gray-900 antialiased">
+      <main className="pt-20 pb-16 lg:pt-32 lg:pb-24  bg-[#0a192f] antialiased">
         <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
           {blog ? (
             <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">

@@ -24,7 +24,7 @@ interface postInterface {
 }
 
 interface tagInterface {
-  id: number;
+  _id: string;
   tagName: string;
   status: string;
   createdAt: string;
@@ -36,6 +36,7 @@ const Blog = () => {
   const [tags, setTags] = useState<tagInterface[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [value] = useDebounce(searchQuery, 500);
+  const [tagQuery, setTagQuery] = useState("");
 
   useEffect(() => {
     const fetchTagsData = async () => {
@@ -52,13 +53,18 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogsData = async () => {
       try {
-        if (value.length > 0) {
-          let response = await axiosInstance.get(
-            `/blogs?search_query=${value}`
-          ); // Relative URL, it appends to the baseURL
+        let query = `/blogs?`;
+        if (value.length > 0 || tagQuery.length > 0) {
+          if (value.length > 0) {
+            query = query + `search_query=${value}`;
+          }
+          if (tagQuery.length > 0) {
+            query = query + `&tag=${tagQuery}`;
+          }
+          const response = await axiosInstance.get(query); // Relative URL, it appends to the baseURL
           setBlogs(response.data);
         } else {
-          let response = await axiosInstance.get("/blogs"); // Relative URL, it appends to the baseURL
+          const response = await axiosInstance.get("/blogs"); // Relative URL, it appends to the baseURL
           setBlogs(response.data);
         }
       } catch (error) {
@@ -67,7 +73,7 @@ const Blog = () => {
     };
 
     fetchBlogsData();
-  }, [value]);
+  }, [value, tagQuery]);
 
   return (
     <div id="work" className="w-full md:h-fit text-gray-300 bg-[#0a192f]">
@@ -92,13 +98,25 @@ const Blog = () => {
 
         <p className="py-6">Tags</p>
         <div className="flex justify-start items-center flex-wrap">
-          {tags.map((item) => {
+          {tags.map((tag) => {
             return (
-              <span className="p-[0.5rem] bg-[#77B255]  rounded-lg m-[0.5rem]">
-                {item.tagName}
+              <span
+                onClick={() => setTagQuery(tag._id)}
+                className="p-[0.5rem] bg-[#77B255]  rounded-lg m-[0.5rem] cursor-pointer"
+              >
+                {tag.tagName}
               </span>
             );
           })}
+          <span
+            onClick={() => {
+              setTagQuery("clearAll");
+              setSearchQuery("");
+            }}
+            className="p-[0.5rem] bg-[#77B255]  rounded-lg m-[0.5rem] cursor-pointer"
+          >
+            Clear All
+          </span>
         </div>
         {/* container for blogs */}
         <div className="grid gap-8 lg:grid-cols-2 pt-8">

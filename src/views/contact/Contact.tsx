@@ -1,5 +1,5 @@
-import { axiosInstance } from "../api/axiosInstance";
-import { mail } from "../constants/constants";
+import { axiosInstance } from "../../api/axiosInstance";
+import { mail } from "../../constants/constants";
 import { useState } from "react";
 
 const Contact = () => {

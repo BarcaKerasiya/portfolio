@@ -23,3 +23,32 @@ export const firebaseConfig: FirebaseConfig = {
   appId: import.meta.env.VITE_REACT_APP_FIREBASE_APP_ID,
   measurementId: import.meta.env.VITE_REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+export interface blogInterface {
+  _id: number;
+  title: string;
+  IPAddress: string;
+  content: string;
+  thumbnail: string;
+  datetime: string;
+  minutesToRead: number;
+  tagIds: tagInterface[];
+  authorIds: authorInterface[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface tagInterface {
+  _id: string;
+  tagName: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}
+export interface authorInterface {
+  _id: string;
+  tagName: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}

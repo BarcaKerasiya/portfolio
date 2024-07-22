@@ -110,6 +110,12 @@ const BlogContentSection = () => {
                 </h1>
               </header>
               <div>{parse(`${blog && blog.content}`)}</div>
+              {/* <div>
+                <div
+                  className="m-10"
+                  dangerouslySetInnerHTML={{ __html: blog.content }}
+                />
+              </div> */}
             </article>
           ) : (
             <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">

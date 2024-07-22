@@ -65,6 +65,11 @@ export const Navbar = () => {
             Contact
           </NavLink>
         </li>
+        {/* <li>
+          <NavLink className="hover:text-[#77B255] duration-300" to="/sign-in">
+            Sign In
+          </NavLink>
+        </li> */}
       </ul>
       <div onClick={toggleClick} className="md:hidden  z-10">
         {!toggle ? (
@@ -153,6 +158,16 @@ export const Navbar = () => {
             Contact
           </NavLink>
         </li>
+        {/* <li className="py-6 text-2xl">
+          {" "}
+          <NavLink
+            onClick={toggleClick}
+            to="/sign-in"
+            className="hover:text-[#77B255] duration-300"
+          >
+            Sign In
+          </NavLink>
+        </li> */}
       </ul>
 
       {/* social media icons */}

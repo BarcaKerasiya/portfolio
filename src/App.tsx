@@ -1,24 +1,30 @@
-import Contact from "./components/Contact";
-import BlogContentSection from "./components/Blog/BlogContent";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Blog from "./components/Blog/Blog";
 import Layout from "./Layout";
-import Hero from "./components/Hero";
-import Tech from "./components/Tech";
 import ErrorPage from "./error-page";
+
+const Contact = lazy(() => import("./views/contact/Contact"));
+const BlogContentSection = lazy(() => import("./views/blog/BlogContent"));
+const Home = lazy(() => import("./views/home/Home"));
+const Blogs = lazy(() => import("./views/blog/Blogs"));
+const TechView = lazy(() => import("./views/tech/TechView"));
+const VerifyEmail = lazy(() => import("./views/authentication/VerifyEmail"));
+const SignIn = lazy(() => import("./views/authentication/SignIn"));
+const SignUp = lazy(() => import("./views/authentication/SignUp"));
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "",
-        element: <Hero />,
+        element: <Home />,
       },
       {
         path: "blogs",
-        element: <Blog />,
+        element: <Blogs />,
       },
       {
         path: "blog/:id",
@@ -30,7 +36,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "tech",
-        element: <Tech />,
+        element: <TechView />,
+      },
+      {
+        path: "verify-email",
+        element: <VerifyEmail />,
+      },
+      {
+        path: "sign-in",
+        element: <SignIn />,
+      },
+      {
+        path: "sign-up",
+        element: <SignUp />,
       },
       {
         path: "*",

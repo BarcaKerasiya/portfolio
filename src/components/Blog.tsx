@@ -15,7 +15,7 @@ const Blog = ({ blogs }: blogProps) => {
               key={post._id}
               className="flex flex-col justify-between w-full  hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] dark:shadow-gray-700/25"
             >
-              <div className="rounded-[10px] bg-gray-900 p-4 !pt-20 sm:p-6 dark:bg-gray-900 flex flex-col h-full">
+              <div className="rounded-[10px] bg-gray-900 p-4 sm:p-6 dark:bg-gray-900 flex flex-col h-full">
                 <time
                   dateTime={post.datetime}
                   className="block text-xs text-gray-400 dark:text-gray-400"

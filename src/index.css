@@ -58,3 +58,18 @@ pre {
   color: #d3d3d3;
   /* color: #dcdcdc; */
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
+}

@@ -40,3 +40,21 @@
 .text-green {
   color: #77b255;
 }
+
+pre {
+  font-family: "Courier New", Courier, monospace;
+  /* background-color: #000000; */
+  /* background-color: #121212; */
+  /* background-color: #1f1f1f; */
+  background-color: #2d2d2d;
+  /* background-color: #3b3b3b; */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow-x: auto;
+  /* color: #ffffff; */
+  /* color: #e0e0e0; */
+  /* color: #c0c0c0; */
+  color: #d3d3d3;
+  /* color: #dcdcdc; */
+}

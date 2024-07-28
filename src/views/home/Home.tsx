@@ -6,9 +6,9 @@ const Home = () => {
     <>
       <section
         id="home"
-        className="min-h-[80vh] bg-[#0a192f] flex items-center justify-center mt-[1rem]"
+        className="min-h-[80vh] bg-[#0a192f] flex items-center justify-center "
       >
-        <div className="w-full max-w-4xl mx-auto px-8 text-center relative">
+        <div className="w-full max-w-4xl mx-auto px-8 text-center relative mt-[4rem]">
           <p className="text-[#77B255] text-xl">👋 Hi there!</p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 animate-fadeInUp">
             I'm Vishnu Kerasiya,
@@ -21,10 +21,13 @@ const Home = () => {
             environmental preservation. Stick around to learn more about me and
             the things I'm interested in!
           </p>
-          <div className="flex justify-center absolute right-[44%] top-[115%]">
+          <br />
+          <br />
+          <div className="flex justify-center  right-[44%] top-[115%]">
             <Link to="https://github.com/BarcaKerasiya" target="_blank">
               <FaGithubSquare size={36} />
             </Link>
+            &nbsp; &nbsp; &nbsp;
             <Link
               to="https://www.linkedin.com/in/kerasiya-vishnu-0j7j1j0j/"
               target="_blank"

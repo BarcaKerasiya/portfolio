@@ -12,7 +12,7 @@ const TechView = () => {
         </div>
         <Tech />
       </div>
-      <div
+      {/* <div
         style={{ display: "flex", justifyContent: "center", margin: "10px" }}
       >
         <iframe
@@ -22,7 +22,7 @@ const TechView = () => {
           allowFullScreen={true}
           title="Embedded post"
         ></iframe>
-      </div>
+      </div> */}
     </div>
   );
 };

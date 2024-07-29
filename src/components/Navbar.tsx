@@ -44,25 +44,11 @@ export const Navbar = () => {
           </li>
         </ul>
         <div onClick={toggleClick} className="md:hidden z-10">
-          {!toggle ? (
-            <FaBars className="md:hidden cursor-pointer" />
-          ) : (
-            <FaTimes className="md:hidden cursor-pointer" />
-          )}
+          {!toggle && <FaBars className="md:hidden cursor-pointer" />}
         </div>
       </div>
       {/* Mobile Menu Overlay */}
-      {toggle && (
-        <div
-          className="z-50 fixed inset-0 bg-black bg-opacity-50"
-          onClick={toggleClick}
-        >
-          <FaTimes
-            className="md:hidden cursor-pointer absolute top-[40px] right-[40px]"
-            onClick={toggleClick}
-          />
-        </div>
-      )}
+
       {/* Mobile Menu */}
 
       <ul
@@ -70,6 +56,10 @@ export const Navbar = () => {
           toggle ? "translate-x-0" : "-translate-x-full"
         } md:hidden z-50`}
       >
+        <FaTimes
+          className="md:hidden cursor-pointer absolute top-[33px] right-[15px]"
+          onClick={toggleClick}
+        />
         <li className="py-6 text-2xl">
           <NavLink
             onClick={toggleClick}

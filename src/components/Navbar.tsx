@@ -57,7 +57,7 @@ export const Navbar = () => {
         } md:hidden z-50`}
       >
         <FaTimes
-          className="md:hidden cursor-pointer absolute top-[33px] right-[15px]"
+          className="block:hidden cursor-pointer absolute top-[33px] right-[15px]"
           onClick={toggleClick}
         />
         <li className="py-6 text-2xl">

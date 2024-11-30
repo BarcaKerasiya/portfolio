@@ -50,7 +50,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      {/* <FAQ /> */}
     </>
   );
 };

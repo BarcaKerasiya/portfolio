@@ -1,29 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { axiosInstance } from "../../api/axiosInstance";
 
 const Home = () => {
-  const [videoUrl, setVideoUrl] = useState("");
-  console.log("videoUrl", videoUrl);
-  useEffect(() => {
-    // Fetch the video URL from the server
-    const fetchVideoUrl = async () => {
-      try {
-        const response = await axiosInstance.get("/video");
-        console.log("response", response.data);
-        setVideoUrl(response.data);
-      } catch (error) {
-        console.error("Error fetching video URL:", error);
-      }
-    };
-
-    fetchVideoUrl();
-  }, []);
-
-  if (!videoUrl) {
-    return <p>Loading video...</p>;
-  }
   return (
     <>
       <section
@@ -72,19 +50,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <div>
-        <h1>Autoplay Video</h1>
-        {/* Embed the video using an iframe */}
-        <iframe
-          src="https://d2gcgu77m9vqg6.cloudfront.net/api/video"
-          allow="autoplay"
-          width="560"
-          height="315"
-          title="Autoplay Video"
-          frameBorder="0"
-          allowFullScreen
-        ></iframe>
-      </div>
     </>
   );
 };
